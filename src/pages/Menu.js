@@ -9,13 +9,13 @@ function Menu() {
   const [menuItemsList, setMenuItemsList] = useState([]);
 
   useEffect(() => {
-    Axios.get("http://localhost:3001/api/menuitems/get").then((response) => {
+    Axios.get("https://blueroses-deploy-heroku.herokuapp.com//api/menuitems/get").then((response) => {
       setMenuItemsList(response.data);
     });
   }, []);
 
   const submitMenuItems = () => {
-    Axios.post("http://localhost:3001/api/menuitems/post", {
+    Axios.post("https://blueroses-deploy-heroku.herokuapp.com/api/menuitems/post", {
       itemName: itemName,
       itemPrice: itemPrice,
       currentStock: currentStock,

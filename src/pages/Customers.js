@@ -14,13 +14,13 @@ export function Customers() {
   const [customerList, setCustomerList] = useState([]);
 
   useEffect(() => {
-    Axios.get("http://localhost:3001/api/customers/get").then((response) => {
+    Axios.get("https://blueroses-deploy-heroku.herokuapp.com/api/customers/get").then((response) => {
       setCustomerList(response.data);
     });
   }, []);
 
   const submitCustomer = () => {
-    Axios.post("http://localhost:3001/api/customers/post", {
+    Axios.post("https://blueroses-deploy-heroku.herokuapp.com/api/customers/post", {
       firstName: firstName,
       lastName: lastName,
       address: address,

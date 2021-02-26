@@ -9,13 +9,13 @@ function Suppliers() {
   const [suppliersList, setSuppliersList] = useState([]);
 
   useEffect(() => {
-    Axios.get("http://localhost:3001/api/suppliers/get").then((response) => {
+    Axios.get("https://blueroses-deploy-heroku.herokuapp.com/api/suppliers/get").then((response) => {
       setSuppliersList(response.data);
     });
   }, []);
 
   const submitSuppliers = () => {
-    Axios.post("http://localhost:3001/api/suppliers/post", {
+    Axios.post("https://blueroses-deploy-heroku.herokuapp.com/api/suppliers/post", {
       supplierName: supplierName,
       supplierPhoneNumber: supplierPhoneNumber,
       quantity: quantity,

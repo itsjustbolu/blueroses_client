@@ -12,13 +12,13 @@ export function Employees() {
   const [employeeList, setEmployeeList] = useState([]);
 
   useEffect(() => {
-    Axios.get("http://localhost:3001/api/employees/get").then((response) => {
+    Axios.get("https://blueroses-deploy-heroku.herokuapp.com/api/employees/get").then((response) => {
       setEmployeeList(response.data);
     });
   }, []);
 
   const submitEmployee = () => {
-    Axios.post("http://localhost:3001/api/employees/post", {
+    Axios.post("https://blueroses-deploy-heroku.herokuapp.com/api/employees/post", {
       employeeFirstName: employeeFirstName,
       employeeLastName: employeeLastName,
       employeePhoneNumber: employeePhoneNumber,

@@ -10,13 +10,13 @@ export function Payments() {
   const [paymentsList, setPaymentsList] = useState([]);
 
   useEffect(() => {
-    Axios.get("http://localhost:3001/api/payments/get").then((response) => {
+    Axios.get("https://blueroses-deploy-heroku.herokuapp.com/api/payments/get").then((response) => {
       setPaymentsList(response.data);
     });
   }, []);
 
   const submitPayment = () => {
-    Axios.post("http://localhost:3001/api/customers/post", {
+    Axios.post("https://blueroses-deploy-heroku.herokuapp.com/api/customers/post", {
       cardNumber: cardNumber,
       expMonth: expMonth,
       expYear: expYear,
