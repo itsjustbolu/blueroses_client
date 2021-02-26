@@ -2,12 +2,12 @@ import React, { Component, useState, useEffect } from "react";
 import Axios from "axios";
 
 export function Employees() {
-  const [employeeFirstName, setFirstName] = useState("");
-  const [employeeLastName, setLastName] = useState("");
-  const [employeePhoneNumber, setPhoneNumber] = useState("");
-  const [employeeEmailAddress, setEmail] = useState("");
-  const [employeeTitle, setTitle] = useState("");
-  const [employeeStartDate, setStartDate] = useState("");
+  const [employeeFirstName, setEmployeeFirstName] = useState("");
+  const [employeeLastName, setEmployeeLastName] = useState("");
+  const [employeePhoneNumber, setEmployeePhoneNumber] = useState("");
+  const [employeeEmailAddress, setEmployeeEmailAddress] = useState("");
+  const [employeeTitle, setEmployeeTitle] = useState("");
+  const [employeeStartDate, setEmployeeStartDate] = useState("");
 
   const [employeeList, setEmployeeList] = useState([]);
 
@@ -44,7 +44,7 @@ export function Employees() {
               type="text"
               className="form-control"
               name="employeeFirstName"
-              onChange={(e) => setFirstName(e.target.value)}
+              onChange={(e) => setEmployeeFirstName(e.target.value)}
             />
           </div>
 
@@ -54,7 +54,7 @@ export function Employees() {
               type="text"
               className="form-control"
               name="employeeLastName"
-              onChange={(e) => setLastName(e.target.value)}
+              onChange={(e) => setEmployeeLastName(e.target.value)}
             />
           </div>
 
@@ -64,17 +64,17 @@ export function Employees() {
               type="number"
               className="form-control"
               name="employeePhoneNumber"
-              onChange={(e) => setPhoneNumber(e.target.value)}
+              onChange={(e) => setEmployeePhoneNumber(e.target.value)}
             />
           </div>
 
           <div className="mb-3">
             <label className="form-label">Email address</label>
             <input
-              type="email"
+              type="text"
               className="form-control"
               name="employeeEmailAddress"
-              onChange={(e) => setEmail(e.target.value)}
+              onChange={(e) => setEmployeeEmailAddress(e.target.value)}
             />
           </div>
 
@@ -84,7 +84,7 @@ export function Employees() {
               type="text"
               className="form-control"
               name="employeeTitle"
-              onChange={(e) => setTitle(e.target.value)}
+              onChange={(e) => setEmployeeTitle(e.target.value)}
             />
           </div>
 
@@ -94,7 +94,7 @@ export function Employees() {
               type="date"
               className="form-control"
               name="employeeStartDate"
-              onChange={(e) => setStartDate(e.target.value)}
+              onChange={(e) => setEmployeeStartDate(e.target.value)}
             />
           </div>
           <br />
@@ -135,6 +135,7 @@ export function Employees() {
                   </td>
                 </tr>
               </table>
+              <br />
             </div>
           );
         })}

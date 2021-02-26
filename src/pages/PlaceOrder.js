@@ -1,12 +1,7 @@
-import React, { Component } from 'react'
-
+import React, { Component } from "react";
 
 function PlaceOrder() {
-    return (
-        <div>
-            
-        </div>
-    )
+  return <div>Work in Progress</div>;
 }
 
-export default PlaceOrder
+export default PlaceOrder;

@@ -193,6 +193,7 @@ export function Customers() {
                   </td>
                 </tr>
               </table>
+              <br />
             </div>
           );
         })}

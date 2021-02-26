@@ -38,7 +38,7 @@ export class Navbar extends Component {
                     PLACE ORDER
                   </a>
                 </li>
-                <li className="nav-item">
+                {/* <li className="nav-item">
                   <a className="nav-link" href="/">
                     GET ORDER DETAILS
                   </a>
@@ -47,7 +47,7 @@ export class Navbar extends Component {
                   <a className="nav-link" href="/">
                     CHECK ORDER STATUS
                   </a>
-                </li>
+                </li> */}
                 <li className="nav-item">
                   <a className="nav-link" href="/customers">
                     CUSTOMERS
