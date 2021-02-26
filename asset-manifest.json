@@ -1,0 +1,20 @@
+{
+  "files": {
+    "main.css": "/blueroses_client/static/css/main.8c8b27cf.chunk.css",
+    "main.js": "/blueroses_client/static/js/main.0f92ede6.chunk.js",
+    "main.js.map": "/blueroses_client/static/js/main.0f92ede6.chunk.js.map",
+    "runtime-main.js": "/blueroses_client/static/js/runtime-main.2f951760.js",
+    "runtime-main.js.map": "/blueroses_client/static/js/runtime-main.2f951760.js.map",
+    "static/js/2.0f87d6cf.chunk.js": "/blueroses_client/static/js/2.0f87d6cf.chunk.js",
+    "static/js/2.0f87d6cf.chunk.js.map": "/blueroses_client/static/js/2.0f87d6cf.chunk.js.map",
+    "index.html": "/blueroses_client/index.html",
+    "static/css/main.8c8b27cf.chunk.css.map": "/blueroses_client/static/css/main.8c8b27cf.chunk.css.map",
+    "static/js/2.0f87d6cf.chunk.js.LICENSE.txt": "/blueroses_client/static/js/2.0f87d6cf.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.2f951760.js",
+    "static/js/2.0f87d6cf.chunk.js",
+    "static/css/main.8c8b27cf.chunk.css",
+    "static/js/main.0f92ede6.chunk.js"
+  ]
+}
