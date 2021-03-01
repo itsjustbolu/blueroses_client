@@ -9,17 +9,22 @@ function Menu() {
   const [menuItemsList, setMenuItemsList] = useState([]);
 
   useEffect(() => {
-    Axios.get("https://blueroses-deploy-heroku.herokuapp.com//api/menuitems/get").then((response) => {
+    Axios.get(
+      "https://blueroses-deploy-heroku.herokuapp.com/api/menuitems/get"
+    ).then((response) => {
       setMenuItemsList(response.data);
     });
   }, []);
 
   const submitMenuItems = () => {
-    Axios.post("https://blueroses-deploy-heroku.herokuapp.com/api/menuitems/post", {
-      itemName: itemName,
-      itemPrice: itemPrice,
-      currentStock: currentStock,
-    }).then(() => {
+    Axios.post(
+      "https://blueroses-deploy-heroku.herokuapp.com/api/menuitems/post",
+      {
+        itemName: itemName,
+        itemPrice: itemPrice,
+        currentStock: currentStock,
+      }
+    ).then(() => {
       alert("Successfully added menu item");
     });
   };
@@ -64,12 +69,13 @@ function Menu() {
           Submit
         </button>
       </form>
-
-      <div>
-        <div>See what's in stock</div>
-        {menuItemsList.map((val) => {
-          return (
-            <table>
+      <br />
+      <br />
+      <h2>OUR MENU ITEMS</h2>
+      {menuItemsList.map((val) => {
+        return (
+          <div>
+            <table className="table table-striped table-hover">
               <tr>
                 <th>Item</th>
                 <th>Price</th>
@@ -82,13 +88,14 @@ function Menu() {
                 <td>{val.currentStock}</td>
                 <td>
                   <input type="button" value="Refresh" />
+                  <input type="button" value="Delete" />
                 </td>
               </tr>
-              <br />
             </table>
-          );
-        })}
-      </div>
+            <br />
+          </div>
+        );
+      })}
     </div>
   );
 }

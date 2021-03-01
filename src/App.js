@@ -13,6 +13,7 @@ import Menu from "./pages/Menu";
 import Payments from "./pages/Payments";
 import PlaceOrder from "./pages/PlaceOrder";
 import Suppliers from "./pages/Suppliers";
+import Status from "./pages/Status";
 
 function App() {
   return (
@@ -26,6 +27,7 @@ function App() {
         <Route path="/payments" component={Payments} exact />
         <Route path="/place-order" component={PlaceOrder} exact />
         <Route path="/suppliers" component={Suppliers} exact />
+        <Route path="/status" component={Status} exact />
       </Switch>
     </Router>
   );

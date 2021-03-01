@@ -5,21 +5,36 @@ function Suppliers() {
   const [supplierName, setSupplierName] = useState("");
   const [supplierPhoneNumber, setSupplierPhoneNumber] = useState("");
   const [quantity, setQuantity] = useState("");
+  const [menuItem, setMenuItem] = useState("");
 
+  const [menuItemsList, setMenuItemsList] = useState([]);
   const [suppliersList, setSuppliersList] = useState([]);
 
   useEffect(() => {
-    Axios.get("https://blueroses-deploy-heroku.herokuapp.com/api/suppliers/get").then((response) => {
+    Axios.get(
+      "https://blueroses-deploy-heroku.herokuapp.com/api/suppliers/get"
+    ).then((response) => {
       setSuppliersList(response.data);
     });
   }, []);
 
+  useEffect(() => {
+    Axios.get(
+      "https://blueroses-deploy-heroku.herokuapp.com/api/menuitems/get"
+    ).then((response) => {
+      setMenuItemsList(response.data);
+    });
+  }, []);
+
   const submitSuppliers = () => {
-    Axios.post("https://blueroses-deploy-heroku.herokuapp.com/api/suppliers/post", {
-      supplierName: supplierName,
-      supplierPhoneNumber: supplierPhoneNumber,
-      quantity: quantity,
-    }).then(() => {
+    Axios.post(
+      "https://blueroses-deploy-heroku.herokuapp.com/api/suppliers/post",
+      {
+        supplierName: supplierName,
+        supplierPhoneNumber: supplierPhoneNumber,
+        quantity: quantity,
+      }
+    ).then(() => {
       alert("Successfully added menu item");
     });
   };
@@ -51,6 +66,21 @@ function Suppliers() {
           />
         </div>
 
+        <div className="mb-3">
+          <label className="form-label">Menu Item</label>
+
+          <select
+            class="form-select"
+            aria-label="Default select example"
+            name="menuItem"
+            onChange={(e) => setMenuItem(e.target.value)}
+          >
+            {menuItemsList.map((val) => {
+              return <option value={val.itemId}>{val.itemName}</option>;
+            })}
+          </select>
+        </div>
+
         <div class="mb-3">
           <label class="form-label">Quantity</label>
           <input
@@ -65,29 +95,34 @@ function Suppliers() {
           Submit
         </button>
       </form>
-
+      <br />
+      <br />
       <div>
-        <div>See what's in stock</div>
+        <div>LIST OF SUPPLIERS</div>
         {suppliersList.map((val) => {
           return (
-            <table>
-              <tr>
-                <th>Supplier Name</th>
-                <th>Supplier Phone Number</th>
-                <th>Quantity</th>
-              </tr>
+            <div>
+              <table className="table table-striped table-hover">
+                <tr>
+                  <th>Supplier Name</th>
+                  <th>Phone Number</th>
+                  <th>Menu Item</th>
+                  <th>Quantity</th>
+                </tr>
 
-              <tr>
-                <td>{val.supplierName}</td>
-                <td>{val.supplierPhoneNumber}</td>
-                <td>{val.quantity}</td>
-                <td>
-                  <input type="button" value="Update" />
-                  <input type="button" value="Delete" />
-                </td>
-              </tr>
+                <tr>
+                  <td>{val.supplierName}</td>
+                  <td>{val.supplierPhoneNumber}</td>
+                  <td>{val.menuItem}</td>
+                  <td>{val.quantity}</td>
+                  <td>
+                    <input type="button" value="Update" />
+                    <input type="button" value="Delete" />
+                  </td>
+                </tr>
+              </table>
               <br />
-            </table>
+            </div>
           );
         })}
       </div>
